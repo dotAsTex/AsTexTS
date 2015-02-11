@@ -1,0 +1,43 @@
+﻿<Window x:Class="DotaLeagueForm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="445" Width="980" Closing="Window_Closing">
+    <Grid>
+        <ListBox x:Name="RadiantList" HorizontalAlignment="Left" Height="183" Margin="10,61,0,0" VerticalAlignment="Top" Width="194" Foreground="#FF07C518"/>
+        <ListBox x:Name="DireList" HorizontalAlignment="Left" Height="183" Margin="300,61,0,0" VerticalAlignment="Top" Width="194" Foreground="#FFC90707"/>
+        <Label x:Name="RightTeam" Content="Dire" HorizontalAlignment="Left" Margin="300,18,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Label x:Name="LeftTeam" Content="Radiant" HorizontalAlignment="Left" Margin="144,18,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <ListBox x:Name="LogBox" HorizontalAlignment="Left" Height="129" Margin="10,275,0,0" VerticalAlignment="Top" Width="484"/>
+        <Label Content="GameLog" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="LobbyPasswordBox" HorizontalAlignment="Left" Height="23" Margin="300,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" IsReadOnly="True"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="236,244,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="LeftTeamLogo" HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="48" Source="Resources/Radiant_icon.png"/>
+        <Image x:Name="RightTeamLogo" HorizontalAlignment="Left" Height="48" Margin="446,10,0,0" VerticalAlignment="Top" Width="48" Source="Resources/Dire_icon.png"/>
+        <Button x:Name="LobbyStartBtn" Content="Start Lobby" HorizontalAlignment="Left" Margin="209,110,0,0" VerticalAlignment="Top" Width="86" Click="lobbyStartBtn_Click"/>
+        <ListBox x:Name="MatchesBox" HorizontalAlignment="Left" Height="69" Margin="516,31,0,0" VerticalAlignment="Top" Width="446" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label Content="Finished Games" HorizontalAlignment="Left" Margin="516,5,0,0" VerticalAlignment="Top"/>
+        <GroupBox Header="Match Result" HorizontalAlignment="Left" Margin="516,110,0,0" VerticalAlignment="Top" Height="294" Width="446">
+            <Grid>
+                <Label x:Name="FirsTBloodLabel" Content="First blood time: " HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="MatchDurationLabel" Content="Match Duration" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="TeamWinLabel" Content="Radiant Team Win" HorizontalAlignment="Left" Margin="242,10,0,0" VerticalAlignment="Top" Width="181" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                <Label x:Name="MatchIdLabel" Content="Match ID:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top"/>
+                <DataGrid x:Name="PlayersStatsGrid" HorizontalAlignment="Left" Margin="0,109,0,0" VerticalAlignment="Top" Height="153" Width="434" AutoGenerateColumns="False" ItemsSource="{Binding}">
+                   <DataGrid.Columns>
+                    <DataGridTextColumn Header="Team" Binding="{Binding Team}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Nickname" Binding="{Binding Nick}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="K" Binding="{Binding K}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="D" Binding="{Binding D}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="A" Binding="{Binding A}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="GPM" Binding="{Binding GPM}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="XPM" Binding="{Binding XPM}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="TD" Binding="{Binding TD}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="HD" Binding="{Binding HD}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="FeederOrLeaver" Binding="{Binding FeederOrLeaver}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
